@@ -15,13 +15,11 @@ export default function HomePage() {
     const [sunrise, setSunrise] = useState("");
     const [windS, setWindS] = useState("");
     const [windD, setWindD] = useState("");
-    const [src, setSrc] = useState(
-        "https://png.pngtree.com/background/20230614/original/pngtree-twilight-shot-of-a-rain-drops-covered-street-picture-image_3460396.jpg"
-    );
+    const [src, setSrc] = useState("");
     const img = {
-        rainy: "https://png.pngtree.com/background/20230614/original/pngtree-twilight-shot-of-a-rain-drops-covered-street-picture-image_3460396.jpg",
-        winter: "https://wallpapers.com/images/hd/snowy-hill-in-winter-5k6lr8j0y8kb9gpe.jpg",
-        summer: "https://wallpapers.com/images/featured/summer-gsgzr2s1hnv5slj3.jpg",
+        rainy: "/rainy.jpg",
+        winter: "/winter.jpg",
+        summer: "/summer.jpg",
     };
 
     const para = {
@@ -44,12 +42,6 @@ export default function HomePage() {
 
         try {
             const response = await axios.request(options);
-            setTemp(response.data.temp);
-            setFeels(response.data.feels_like);
-            setCloud(response.data.cloud_pct);
-            setMin(response.data.min_temp);
-            setMax(response.data.max_temp);
-
             if (response.data.temp <= 10) {
                 setDesc(para.cold);
                 setSrc(img.winter);
@@ -64,6 +56,11 @@ export default function HomePage() {
             if (response.data.cloud_pct >= 80) {
                 setSrc(img.rainy);
             }
+            setTemp(response.data.temp);
+            setFeels(response.data.feels_like);
+            setCloud(response.data.cloud_pct);
+            setMin(response.data.min_temp);
+            setMax(response.data.max_temp);
 
             setSunrise(convertUnixTimestampToTime(response.data.sunrise));
             setSunset(convertUnixTimestampToTime(response.data.sunset));
