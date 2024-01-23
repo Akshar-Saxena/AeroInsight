@@ -108,11 +108,13 @@ export default function HomePage() {
                 </div>
             ) : (
                 <div
-                    className={`flex h-screen bg-[url('${src}')] max-[1080px]:flex-col max-[1080px]:h-full bg-cover max-[1080px]:justify-center max-[1080px]:items-center bg-center w-full relative`}
+                    className={`flex h-screen max-[1080px]:flex-col max-[1080px]:h-full bg-cover max-[1080px]:justify-center max-[1080px]:items-center bg-center w-full relative`}
+                    style={{ backgroundImage: `url(${src})` }}
                 >
                     <div className="h-screen w-full max-[1080px]:h-full bg-[#0e0e0eb5] absolute top-0"></div>
                     <div
-                        className={`w-[40%] max-[1080px]:w-[90%] max-[1080px]:p-6  z-30 bg-[url('${src}')] relative  bg-cover m-5 rounded-md bg-black text-white`}
+                        className={`w-[40%] max-[1080px]:w-[90%] max-[1080px]:p-6  z-30 relative  bg-cover m-5 rounded-md bg-black text-white`}
+                        style={{ backgroundImage: `url(${src})` }}
                     >
                         <div className="h-full w-full bg-gradient-to-b from-[#00000080] to-[#00000029] absolute top-0 rounded-md"></div>
                         <div className="flex flex-col justify-center h-[90%] items-center relative z-50">
