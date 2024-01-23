@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Prosto+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid white; */
+    font-family: "prosto one";
+}
