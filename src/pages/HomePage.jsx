@@ -37,8 +37,7 @@ export default function HomePage() {
             url: "https://weather-by-api-ninjas.p.rapidapi.com/v1/weather",
             params: { city: state },
             headers: {
-                "X-RapidAPI-Key":
-                    "e60d81a09emsh298c2129fcfed33p17cca3jsn3969ee95a884",
+                "X-RapidAPI-Key": import.meta.env.VITE_KEY,
                 "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
             },
         };
